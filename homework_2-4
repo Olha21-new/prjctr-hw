@@ -1,0 +1,13 @@
+“use strict”
+// task 4
+let a = 12;
+let b = 2;
+let c = 20;
+
+let binaryResult = (a + b).toString(2); //14 = 1110
+let binaryResult2 = (a + c).toString(2); //32 = 100000
+let binaryResult3 = (c + c).toString(2); //40 = 101000
+
+console.log(binaryResult, typeof binaryResult);
+console.log(binaryResult2, typeof binaryResult2);
+console.log(binaryResult3, typeof binaryResult3);
