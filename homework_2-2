@@ -1,3 +1,4 @@
+“use strict”
 //task 2
 
 let uah = prompt("Скільки в тебе гривень в матрасі?");
