@@ -1,0 +1,39 @@
+"use strict";
+
+// task 1
+let age = 20;
+
+console.log("Перетворення на булевий рядок");
+let string = String(age);
+console.log(string);
+console.log(typeof string);
+
+let string2 = age.toString();
+console.log(string2);
+console.log(typeof string2);
+
+let string3 = age + "";
+console.log(string3);
+console.log(typeof string3);
+
+console.log("Перетворення на число");
+let number = Number(string);
+console.log(number);
+console.log(typeof number);
+
+let number2 = +string;
+console.log(number2);
+console.log(typeof number2);
+
+let number3 = parseInt(string);
+console.log(number3);
+console.log(typeof number3);
+
+console.log("Перетворення на булеве значення");
+let bool = Boolean(age);
+console.log(bool);
+console.log(typeof bool);
+
+let bool2 = !!age;
+console.log(bool2);
+console.log(typeof bool2);
