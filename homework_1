@@ -1,0 +1,19 @@
+"use strict";
+
+let x = 2;
+let y = 3;
+
+let sum = x + y;
+console.log(sum);
+
+let subtraction = x - y;
+console.log(subtraction);
+
+let multiplication = x * y;
+console.log(multiplication);
+
+let division = y / 2;
+console.log(division);
+
+let exponentiation = x ** y;
+console.log(exponentiation);
