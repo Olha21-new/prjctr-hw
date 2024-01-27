@@ -4,6 +4,6 @@ let liters = prompt("Скільки літрів бажаєте придбати
 console.log(liters);
 let price = prompt("Скільки коштує обраний Вами бензин?");
 console.log(price);
-let bill = (liters * price).toFixed(1);
+let bill = (liters * price).toFixed(2); //виправила заокруглення до сотих
 console.log(bill);
 alert(`Це Вам обійдеться в ${bill} гривень 🙂`);
