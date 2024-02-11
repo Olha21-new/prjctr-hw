@@ -35,15 +35,11 @@ let string = "42559125";
 let result = "";
 
 for (let i = 0; i < string.length; i++) {
-  let j = string[i];
-  if (!isNaN(j)) {
-    let number = parseInt(j);
-    console.log(i);
-    if (number < 5) {
-      result = result + "0";
-    } else {
-      result = result + "1";
-    }
+  let number = parseInt(string[i]);
+  if (number < 5) {
+    result = result + "0";
+  } else {
+    result = result + "1";
   }
 }
 console.log(result);
