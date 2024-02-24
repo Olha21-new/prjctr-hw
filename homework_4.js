@@ -17,13 +17,8 @@ let flatArray = resultsArray.flat(Infinity);
 
 console.log(flatArray);
 
-function calculateArray(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (typeof arr[i] === "number") {
-      productOfArray *= arr[i];
-    }
-  }
+for (let value of flatArray) {
+  productOfArray *= value;
 }
 
-calculateArray(flatArray);
 console.log(productOfArray);
