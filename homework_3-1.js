@@ -35,11 +35,8 @@ let string = "42559125";
 let result = "";
 
 for (let i = 0; i < string.length; i++) {
-  let number = parseInt(string[i]);
-  if (number < 5) {
-    result = result + "0";
-  } else {
-    result = result + "1";
-  }
+  let number = string[i];
+  result += number < 5 ? "0" : "1";
 }
+
 console.log(result);
