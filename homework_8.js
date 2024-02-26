@@ -3,10 +3,9 @@
 // Використайте оператор розширення
 
 function addThemAll(...args) {
-  let sum = [...args].reduce(function (a, b) {
+  return args.reduce(function (a, b) {
     return a + b;
   });
-  console.log(sum);
 }
 
 console.log(addThemAll(2, 4)); // 6
