@@ -6,15 +6,14 @@ function detonatorTimer(delay) {
   let intervalId = setInterval(function () {
     console.log(delay--);
 
-    if (delay > 0) {
+    if (delay <= 0) {
       clearInterval(intervalId);
       console.log("BOOM!");
     }
   }, 1000);
 }
-let delay = 3;
 
-detonatorTimer(delay);
+detonatorTimer(3);
 
 // Task 2
 // рекурсивна
@@ -28,9 +27,8 @@ function detonatorTimer2(delay) {
     console.log("BOOM!");
   }
 }
-let delay = 3;
 
-detonatorTimer2(delay);
+detonatorTimer2(3);
 
 // Task 3
 let me = {
