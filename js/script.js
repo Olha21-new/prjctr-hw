@@ -5,25 +5,48 @@ const pageBody = document.getElementById("body");
 const message = document.querySelector(".text");
 
 const isButtonActive = localStorage.getItem("isButtonActive") === "true";
+let storedTheme = localStorage.getItem("theme");
+if (storedTheme === null || storedTheme === undefined) {
+  storedTheme = "light";
+}
+const lastAction = localStorage.getItem("lastChange");
+
+if (storedTheme === "dark") {
+  turnOn();
+} else {
+  turnOff();
+}
 
 button.addEventListener("click", function () {
-  const isButtonActive = button.classList.contains("active");
-  const currentDate = new Date();
-
   if (isButtonActive) {
-    button.classList.remove("active");
-    pageBody.classList.remove("dark-mode");
-    button.textContent = "Turn On";
-    message.textContent = `Last turn off:${formatDate(currentDate)}`;
-    console.log("Removed active class");
+    turnOff();
   } else {
-    button.classList.add("active");
-    pageBody.classList.add("dark-mode");
-    button.textContent = "Turn Off";
-    message.textContent = `Last turn on:${formatDate(currentDate)}`;
-    console.log("Added active class");
+    turnOn();
   }
 });
+
+function turnOn() {
+  isButtonActive = true;
+  button.classList.add("active");
+  pageBody.classList.add("dark-mode");
+  button.textContent = "Turn Off";
+  message.textContent = `Last turn on: ${formatDate(currentDate)}`;
+  localStorage.setItem("theme", "dark");
+  localStorage.setItem("lastChange", currentDate);
+  localStorage.setItem("isButtonActive", "true");
+  console.log("Added active class");
+}
+function turnOff() {
+  isButtonActive = false;
+  button.classList.remove("active");
+  pageBody.classList.remove("dark-mode");
+  button.textContent = "Turn On";
+  message.textContent = `Last turn off: ${formatDate(currentDate)}`;
+  localStorage.setItem("theme", "light");
+  localStorage.setItem("lastChange", currentDate);
+  localStorage.setItem("isButtonActive", "false");
+  console.log("Removed active class");
+}
 
 function formatDate(date) {
   const options = {
