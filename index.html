@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Курсовий</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap"
+    />
+
+    <script src="./js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Date Picker</h1>
+    </header>
+    <main>
+      <ul>
+        <li data-tab-target="#range" class="tab-button active">Date Range</li>
+        <li data-tab-target="#holidays" class="tab-button">Holidays Dates</li>
+      </ul>
+
+      <div class="tabs-content">
+        <div id="range" data-tab-content class="active">
+          <h2>This is tab 1</h2>
+          <p>This is tab 1</p>
+        </div>
+        <div id="holidays" data-tab-content>
+          <h2>This is tab 2</h2>
+          <p>This is tab 2</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
