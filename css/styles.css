@@ -1,0 +1,29 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+.button {
+  color: #fff;
+  background-color: #000;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  padding: 20px 40px;
+  font-size: 24px;
+  line-height: 1em;
+  text-decoration: none;
+}
+
+.active {
+  color: #000;
+  background-color: #fff;
+}
