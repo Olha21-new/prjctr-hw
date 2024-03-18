@@ -1,50 +1,47 @@
-"use stict";
+"use strict";
 
 const button = document.getElementById("button");
 const pageBody = document.getElementById("body");
 const message = document.querySelector(".text");
 
-const isButtonActive = localStorage.getItem("isButtonActive") === "true";
 let storedTheme = localStorage.getItem("theme");
 if (storedTheme === null || storedTheme === undefined) {
   storedTheme = "light";
 }
+
 const lastAction = localStorage.getItem("lastChange");
 
 if (storedTheme === "dark") {
-  turnOn();
+ turnOn(new Date(lastAction));
 } else {
-  turnOff();
+  turnOff(new Date(lastAction));
 }
 
 button.addEventListener("click", function () {
-  if (isButtonActive) {
-    turnOff();
+  const currentDate = new Date();
+  if (button.classList.contains("active")) {
+    turnOff(currentDate);
   } else {
-    turnOn();
+    turnOn(currentDate);
   }
 });
 
-function turnOn() {
-  isButtonActive = true;
+function turnOn(currentDate) {
   button.classList.add("active");
   pageBody.classList.add("dark-mode");
   button.textContent = "Turn Off";
   message.textContent = `Last turn on: ${formatDate(currentDate)}`;
   localStorage.setItem("theme", "dark");
   localStorage.setItem("lastChange", currentDate);
-  localStorage.setItem("isButtonActive", "true");
   console.log("Added active class");
 }
-function turnOff() {
-  isButtonActive = false;
+function turnOff(currentDate) {
   button.classList.remove("active");
   pageBody.classList.remove("dark-mode");
   button.textContent = "Turn On";
   message.textContent = `Last turn off: ${formatDate(currentDate)}`;
   localStorage.setItem("theme", "light");
   localStorage.setItem("lastChange", currentDate);
-  localStorage.setItem("isButtonActive", "false");
   console.log("Removed active class");
 }
 
