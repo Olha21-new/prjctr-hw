@@ -16,22 +16,100 @@
 
   <body>
     <header class="header">
-      <h1>Date Picker</h1>
+      <h1>Курсовий</h1>
     </header>
     <main>
       <ul>
-        <li data-tab-target="#range" class="tab-button active">Date Range</li>
-        <li data-tab-target="#holidays" class="tab-button">Holidays Dates</li>
+        <li data-tab-target="#range" class="tab-button active">Проміжок Часу</li>
+        <li data-tab-target="#holidays" class="tab-button">Святкові Дні</li>
       </ul>
 
       <div class="tabs-content">
+        <!--Tab 1-->
         <div id="range" data-tab-content class="active">
-          <h2>This is tab 1</h2>
-          <p>This is tab 1</p>
+           <!--Inputs tab 1-->
+           <h2>Вибір дати</h2>
+
+          <div class="input-date__wrapper">
+            <div class="input-date">
+             <label>Початкова Дата</label>
+             <input type="date" />
+           </div>
+           <div class="input-date">
+             <label>Кінцева Дата</label>
+             <input type="date" />
+           </div>
+            <div class="time-span">
+              <button data-preset="Тиждень">
+                Week
+              </button>
+              <button  data-preset="Місяць">
+                Month
+              </button>
+            </div>
+          
+              <div class="input-date">
+              <label>Оберіть Будні/Вихідні</label>
+              <select name="selectDays" 
+               <option value="all">Всі дні</option>
+               <option value="weekdays">Будні дні</option>
+               <option value="weekends">Вихідні дні</option>
+              </select>
+             </div>
+
+              <div class="input-date" ><label>Оберіть Одиниці Вимірювання</label>
+               <select name="selectUnits" 
+               <option value="days">Порахувати кількість днів</option>
+               <option value="hours">Порахувати кількість годин</option>
+               <option value="minutes">Порахувати кількість хвилин</option>
+               <option value="seconds">Порахувати кількість секунд</option>
+               </select>
+              </div>
+            
+            <div class="count__button-wrapper">
+              <button class="count__button""">Обчислити</button>
+            </div>
+          </div>
+          <!--Results block-->
+          <div class="results">
+            <h2>Результати</h2>
+            <ul class="result-history">
+              <li class="result-history__list">Тут буде результат</li>             
+          </div>
         </div>
+        <!--Tab 2-->
         <div id="holidays" data-tab-content>
-          <h2>This is tab 2</h2>
-          <p>This is tab 2</p>
+           <!--Inputs tab 2-->
+           <div class="input-date__wrapper">
+            <div class="input-date">
+             <label>Вибір країни</label>
+              <select name="selectCountry" ><
+               <option value="all">Всі дні</option>
+               <option value="weekdays">Будні дні</option>
+               <option value="weekends">Вихідні дні</option>
+              </select>
+              </div>
+
+              <div class="input-date">
+               <label>Вибір року</label>
+               <select name="selectYear" >
+                <option value="days">Порахувати кількість днів</option>
+                <option value="hours">Порахувати кількість годин</option>
+                <option value="minutes">Порахувати кількість хвилин</option>
+                <option value="seconds">Порахувати кількість секунд</option>
+               </select>
+             </div>
+             <div class="count__button-wrapper">
+              <button class="count__button">Показати</button>
+            </div>  
+           </div>
+           <!--Results block-->
+          <div class="results">
+            <h2>Результати</h2>
+            <ul class="result-history">
+              <li class="result-history__list">Тут буде результат</li>             
+          </div>
+          </div>
         </div>
       </div>
     </main>
